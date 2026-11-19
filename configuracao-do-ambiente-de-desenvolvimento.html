@@ -1,0 +1,1336 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introdução ao PHP8 por meio de exemplos">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/br-php8-oct-2026/configuracao-do-ambiente-de-desenvolvimento.html">
+      
+      
+        <link rel="prev" href="introducao.html">
+      
+      
+        <link rel="next" href="fundamentos-do-php.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. Configuração do ambiente de desenvolvimento - Introdução ao PHP8 por meio de exemplos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introdução ao PHP8 por meio de exemplos";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-configuracao-do-ambiente-de-desenvolvimento" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introdução ao PHP8 por meio de exemplos" class="md-header__button md-logo" aria-label="Introdução ao PHP8 por meio de exemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introdução ao PHP8 por meio de exemplos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Configuração do ambiente de desenvolvimento
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Alternar para o modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para o modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Alternar para o modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para o modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/br-php8-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introdução ao PHP8 por meio de exemplos" class="md-nav__button md-logo" aria-label="Introdução ao PHP8 por meio de exemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introdução ao PHP8 por meio de exemplos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/br-php8-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bem-vindo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introducao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introdução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Configuração do ambiente de desenvolvimento
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="configuracao-do-ambiente-de-desenvolvimento.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Configuração do ambiente de desenvolvimento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-instalacao-do-laragon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Instalação do Laragon
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Instalação do Laragon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-selecao-do-php-85" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. Seleção do PHP 8.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-configuracao-do-php-para-o-treinamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2. Configuração do PHP para o treinamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-instalacao-do-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Instalação do VS Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-instalacao-do-codigo-do-curso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Instalação do código do curso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-instalacao-de-bibliotecas-com-o-composer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Instalação de bibliotecas com o Composer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fundamentos-do-php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Fundamentos do PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-de-aplicacao---versoes-1-e-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Exercício de aplicação – Versões 1 e 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="as-classes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. As classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="excecoes-e-erros.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Exceções e erros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Exercício prático – Versão 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="traits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aplicacoes-em-camadas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Aplicações em camadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-de-aplicacao---versao-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Exercício de aplicação – versão 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usando-o-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Usando o SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Exercício prático – Versão 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-de-aplicacao---versao-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Exercício de aplicação – Versão 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Exercício prático – Versão 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="funcoes-de-rede.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Funções de rede
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-services.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Web services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Exercício prático – Versão 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Exercício prático – Versão 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-de-aplicacao---versao-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Exercício de aplicação – Versão 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="processamento-de-documentos-xml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Processamento de documentos XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Exercício prático – Versão 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Exercício prático – Versão 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Exercício prático – versão 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Conclusão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-configuracao-do-ambiente-de-desenvolvimento">2. <span style="color: #2e74b5">Configuração do ambiente de desenvolvimento</span></h1>
+<p>Os scripts foram escritos e testados no seguinte ambiente:</p>
+<ul>
+<li>um ambiente de servidor web [Apache] / SGBD [MySQL] / [PHP] 8.5 chamado <em>[Laragon]</em>;</li>
+<li>o editor <em>[Visual Studio Code]</em> e sua extensão <em>[PHP Intelephense]</em>;</li>
+<li>o gerenciador de dependências <em>[Composer]</em>, fornecido com o <em>[Laragon]</em>, que instala as bibliotecas PHP usadas pelo curso.</li>
+</ul>
+<p>Outras ferramentas (o servidor de e-mail <em>[Mailpit]</em>, o SGBD [PostgreSQL] e o servidor <em>[Redis]</em>) só interessam a certos capítulos: sua instalação é descrita nos capítulos correspondentes.</p>
+<h2 id="21-instalacao-do-laragon">2.1. <span style="color: #2e74b5">Instalação do Laragon</span></h2>
+<p><em>[Laragon]</em> é um pacote para <em>[Windows]</em> que reúne vários componentes de software:</p>
+<ul>
+<li>um servidor web (<em>[Apache]</em>). Vamos usá-lo para escrever scripts web em PHP;</li>
+<li>o SGBD [MySQL] ([PostgreSQL] pode ser adicionado a ele, veja o capítulo sobre a versão 6);</li>
+<li>a linguagem de script PHP, em várias versões, incluindo a versão 8.5;</li>
+<li>um servidor <em>[Redis]</em> que implementa um cache para aplicações web;</li>
+<li>a ferramenta <em>[Composer]</em>;</li>
+<li>um terminal de linha de comando no qual todas essas ferramentas podem ser usadas diretamente.</li>
+</ul>
+<p><em>[Laragon]</em> pode ser baixado em<a href="https://laragon.org/download/"><u><span style="color: #0563c1"> https://laragon.org/download/</span></u></a>. Seu uso é gratuito, com todos os recursos; de vez em quando aparece um aviso pedindo a compra de uma licença para apoiar o desenvolvimento, o que é opcional. A instalação é simples: basta aceitar as configurações padrão. <em>[Laragon]</em> é então instalado na pasta <em>[C:\laragon]</em>, que chamaremos de &lt;laragon&gt; daqui em diante:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>C:\laragon
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── bin\        the software: apache, mysql, php, redis, composer…
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── data\       the DBMS data
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>├── etc\        configuration files
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>├── tmp\
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>└── www\        the root of the Apache web server: http://localhost
+</code></pre></div></td></tr></table></div>
+<p>Ao iniciar o <em>[Laragon]</em> , sua janela principal é exibida:</p>
+<ul>
+<li>O botão <em>[Démarrer tout]</em> (Iniciar tudo) inicia o servidor web <em>[Apache]</em>, bem como o SGBD [MySQL]. A janela indica então, para cada um deles, que está ativo e em qual porta escuta: 80 para o <em>[Apache]</em>, 3306 para o <em>[MySQL]</em>;</li>
+<li>o botão <em>[Web]</em> exibe a página <em>[http://localhost]</em>, que corresponde à pasta <em>[&lt;laragon&gt;/www]</em>;</li>
+<li>o botão <em>[Base de données]</em> (Banco de dados) abre uma ferramenta de administração de bancos de dados (<em>[HeidiSQL]</em>, incluída no <em>[Laragon]</em>);</li>
+<li>o botão <em>[Terminal]</em> abre um terminal de comandos no qual <em>[php]</em>, <em>[composer]</em>, [mysql]… podem ser usados diretamente;</li>
+<li>o botão <em>[Racine]</em> (Raiz) abre o explorador de arquivos do <em>[Windows]</em> na pasta <em>[&lt;laragon&gt;/www]</em>. É nela que você deve colocar todas as aplicações web gerenciadas pelo servidor <em>[Apache]</em> do <em>[Laragon]</em>;</li>
+<li>Clicar com o botão direito na janela (ou no ícone do <em>[Laragon]</em> na barra de tarefas) abre o menu do <em>[Laragon]</em>, que dá acesso às configurações de cada aplicação.</li>
+</ul>
+<h3 id="211-selecao-do-php-85">2.1.1. <span style="color: #1f4d78">Seleção do PHP 8.5</span></h3>
+<p><em>O [Laragon]</em> pode conter várias versões do PHP. A versão a usar é selecionada no menu, na seção <em>[PHP &gt; Version]</em>. Selecione a versão 8.5 (a mais recente da série 8.5). Ela será então usada tanto pelo servidor <em>[Apache]</em> quanto pelo comando de terminal <em>[php]</em> .</p>
+<p>Para que o comando <em>[php]</em> também possa ser usado nos terminais do <em>[VS Code]</em>, a pasta do PHP deve estar no PATH do <em>[Windows]</em>. <em>[Laragon]</em> cuida disso: <em>[Tools &gt; Path &gt; Add Laragon to Path]</em>. Depois, abra um novo terminal (os terminais já abertos não enxergam a mudança) e digite:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&gt; php -v
+</code></pre></div></td></tr></table></div>
+<p>O comando deve exibir a versão do PHP, 8.5.x.</p>
+<h3 id="212-configuracao-do-php-para-o-treinamento">2.1.2. <span style="color: #1f4d78">Configuração do PHP para o treinamento</span></h3>
+<p>O PHP é configurado por um arquivo de texto chamado <em>[php.ini]</em>, acessível pelo menu do <em>[Laragon]</em>, na seção <em>[PHP &gt; php.ini]</em>. Durante o treinamento, o PHP deve relatar <strong>todos</strong> os erros, avisos e descontinuações. Verifique se o arquivo contém as linhas a seguir (ou modifique-o):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="na">error_reporting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">E_ALL</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="na">display_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">On</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="na">display_startup_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">On</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="na">log_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">On</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="na">error_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">C:/laragon/tmp/php_errors.log</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="na">date.timezone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Europe/Paris</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><em>[error_reporting = E_ALL]</em>: o PHP relata tudo, inclusive as mensagens <em>[Deprecated]</em> que anunciam recursos descontinuados. Uma configuração de produção costuma usar <strong><em>[E_ALL &amp; ~E_DEPRECATED]</em></strong>, que as oculta: não é o que queremos aqui;</li>
+<li><em>[display_errors = On]</em>: as mensagens são exibidas na saída do script (o terminal ou a página web);</li>
+<li><em>[log_errors = On]</em>: as mensagens também são gravadas no log de erros;</li>
+<li><em>[error_log]</em>: o arquivo de log. Sem essa linha, um script de console grava seu log no próprio terminal, e cada mensagem apareceria ali duas vezes (uma precedida por <em>[PHP]</em>, outra sem ele);</li>
+<li><em>[date.timezone]</em>: o fuso horário usado pelas funções de data.</li>
+</ul>
+<p>O curso também usa várias extensões do PHP. Elas são ativadas no menu do <em>[Laragon]</em>, na seção <em>[PHP &gt; Extensions]</em>, ou no arquivo <em>[php.ini]</em> por meio de linhas da forma <strong><em>[extension=name]</em></strong>. As extensões usadas são: <em>[curl]</em>, <em>[mbstring]</em>, <em>[openssl]</em>, <em>[pdo_mysql]</em>, <em>[pdo_pgsql]</em>, <em>[fileinfo]</em> e <em>[zip]</em> (esta última é usada pelo <em>[Composer]</em> para descompactar as bibliotecas que ele baixa). Depois de modificar o arquivo <em>[php.ini]</em>, é preciso reiniciar o <em>[Apache]</em> (o botão [Reload] do [Laragon]); já os scripts de console relêem o arquivo <em>[php.ini]</em> a cada execução.</p>
+<p>Você pode verificar a configuração em um terminal com o comando <strong><em>[php --ini]</em></strong> (o arquivo <em>[php.ini]</em> utilizado) e <strong><em>[php -m]</em></strong> (a lista das extensões carregadas). O primeiro script do próximo capítulo, <em>[phpinfo.php]</em>, exibe toda a configuração.</p>
+<h2 id="22-instalacao-do-vs-code">2.2. <span style="color: #2e74b5">Instalação do VS Code</span></h2>
+<p><em>O [Visual Studio Code]</em> é um editor gratuito da Microsoft, disponível para download em<a href="https://code.visualstudio.com/"><u><span style="color: #0563c1"> https://code.visualstudio.com/</span></u></a>. Aqui, ele substitui o IDE [NetBeans] usado no curso de PHP 7.</p>
+<p>Depois de instalar o <em>[VS Code]</em> , adicione o suporte à linguagem PHP: no painel <em>[Extensions]</em> (Ctrl+Shift+X), procure e instale a extensão <em>[PHP Intelephense]</em>. Ela oferece:</p>
+<ul>
+<li>autocompletar de código: funções, classes, métodos e atributos do PHP são sugeridos enquanto você digita;</li>
+<li>exibição da documentação de uma função ou método ao passar o mouse sobre o nome;</li>
+<li>detecção de erros durante a digitação (variáveis indefinidas, tipos incorretos, métodos inexistentes etc.), que são sublinhados no código e listados no <em>painel [Problems]</em>;</li>
+<li>navegação no código: pressionar Ctrl+clique no nome de uma classe ou função abre sua definição, inclusive as das bibliotecas da pasta <em>[vendor]</em>.</li>
+</ul>
+<p><em>O [Intelephense]</em> precisa conhecer a versão do PHP em uso para identificar seus novos recursos: nas configurações do <em>[VS Code]</em> (Ctrl+vírgula), pesquise “intelephense php version” e informe 8.5.</p>
+<p>Em seguida, abra a pasta do código do curso no <em>[VS Code]</em> (menu <em>[File &gt; Open Folder]</em>). Um terminal é aberto pelo menu <em>[Terminal &gt; New Terminal]</em>: ele já aponta para a pasta aberta, e você digita os comandos <em>[php]</em>, <em>[composer]</em>, [curl]… Para executar um script de console, navegue até sua pasta (comando <strong><em>[cd]</em></strong>) e digite <strong><em>[php script-name.php]</em></strong>.</p>
+<h2 id="23-instalacao-do-codigo-do-curso">2.3. <span style="color: #2e74b5">Instalação do código do curso</span></h2>
+<p>Os arquivos de código do curso estão em uma pasta chamada <em>[php8-oct-2026]</em>, que pode ser baixada no início deste documento. Coloque-a na pasta <em>[&lt;laragon&gt;/www]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>C:\laragon\www
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>└── php8-oct-2026
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    ├── composer.json
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    ├── phpunit.xml
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    ├── scripts-console
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    └── scripts-web
+</code></pre></div></td></tr></table></div>
+<p>Seus scripts web ficam então acessíveis em URLs [http://localhost/php8-oct-2026/...]. Por exemplo, depois que o <em>[Apache]</em> for iniciado, a URL [http://localhost/php8-oct-2026/composer.json] deve exibir o arquivo <em>[composer.json]</em>.</p>
+<h2 id="24-instalacao-de-bibliotecas-com-o-composer">2.4. <span style="color: #2e74b5">Instalação de bibliotecas com o Composer</span></h2>
+<p>Como a maioria das linguagens de programação, o PHP tem um gerenciador de dependências, o <em>[Composer]</em>, que baixa as bibliotecas de que um projeto precisa do repositório <em>[packagist.org]</em>. As bibliotecas usadas pelo curso estão declaradas no arquivo <em>[composer.json]</em> da pasta <em>[php8-oct-2026]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stahe/php8-oct-2026"</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Code of the course \"Introduction to the PHP 8 language by example\" (October 2026)"</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">        </span><span class="nt">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=8.5"</span><span class="p">,</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="nt">"symfony/http-foundation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.0"</span><span class="p">,</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="nt">"symfony/http-client"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.0"</span><span class="p">,</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">        </span><span class="nt">"symfony/mailer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.0"</span><span class="p">,</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="nt">"symfony/mime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.0"</span><span class="p">,</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">        </span><span class="nt">"predis/predis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.0"</span><span class="p">,</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="nt">"zbateson/mail-mime-parser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.0"</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">    </span><span class="nt">"require-dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="nt">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^12.0"</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">        </span><span class="nt">"sort-packages"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Linha 6: as bibliotecas necessárias para executar os scripts. Cada uma é identificada por um nome da forma <em>[vendor/library]</em> e por uma restrição de versão: <strong><em>[^8.0]</em></strong> significa “qualquer versão 8.x a partir da 8.0”. O papel de cada uma é descrito nos capítulos que as utilizam;</li>
+<li>linha 7: o projeto exige o PHP 8.5 ou posterior;</li>
+<li>linha 15: bibliotecas usadas somente no desenvolvimento, neste caso o framework de testes <em>[PHPUnit]</em>.</li>
+</ul>
+<p>Para instalar essas bibliotecas, abra um terminal na pasta <em>[php8-oct-2026]</em> (o terminal do <em>[Laragon]</em> ou o terminal do <em>[VS Code]</em>) e digite:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>&gt; composer install
+</code></pre></div></td></tr></table></div>
+<p><em>O [Composer]</em> cria então uma pasta chamada <em>[vendor]</em> contendo as bibliotecas e suas dependências, além de um arquivo chamado <em>[vendor/autoload.php]</em>. Um script que queira usar essas bibliotecas só precisa incluir esse arquivo, que carrega automaticamente suas classes na primeira vez que são usadas. Os scripts deste curso fazem isso com um caminho relativo à sua própria pasta, por exemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="x">require_once __DIR__ . '/../../vendor/autoload.php';</span>
+</code></pre></div></td></tr></table></div>
+<p>A constante <em>[__DIR__]</em> designa a pasta do script que a utiliza: assim, o caminho não depende da pasta em que o script é executado, nem de onde está a pasta <em>[php8-oct-2026]</em>.</p>
+<p>Verifique a instalação exibindo a versão do <em>[PHPUnit]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>&gt; php vendor/bin/phpunit --version
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>PHPUnit 12.5.37 by Sebastian Bergmann and contributors.
+</code></pre></div></td></tr></table></div>
+<p>Agora que o ambiente de trabalho está instalado, podemos abordar os fundamentos do PHP.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Este curso, escrito pela IA <strong>Claude</strong>, da Anthropic, a pedido de <strong>Serge Tahé</strong>, é disponibilizado ao público sob os termos da licença
+        <em>Creative Commons Atribuição – Uso Não Comercial –
+        Compartilha Igual 3.0 Não Adaptada</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

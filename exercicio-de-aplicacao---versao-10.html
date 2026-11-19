@@ -1,0 +1,2039 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introdução ao PHP8 por meio de exemplos">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/br-php8-oct-2026/exercicio-de-aplicacao---versao-10.html">
+      
+      
+        <link rel="prev" href="exercicio-pratico---versao-9.html">
+      
+      
+        <link rel="next" href="processamento-de-documentos-xml.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>20. Exercício de aplicação – Versão 10 - Introdução ao PHP8 por meio de exemplos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introdução ao PHP8 por meio de exemplos";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#20-exercicio-de-aplicacao-versao-10" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introdução ao PHP8 por meio de exemplos" class="md-header__button md-logo" aria-label="Introdução ao PHP8 por meio de exemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introdução ao PHP8 por meio de exemplos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              20. Exercício de aplicação – Versão 10
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Alternar para o modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para o modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Alternar para o modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para o modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/br-php8-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introdução ao PHP8 por meio de exemplos" class="md-nav__button md-logo" aria-label="Introdução ao PHP8 por meio de exemplos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introdução ao PHP8 por meio de exemplos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/br-php8-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bem-vindo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introducao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introdução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuracao-do-ambiente-de-desenvolvimento.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Configuração do ambiente de desenvolvimento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fundamentos-do-php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Fundamentos do PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-de-aplicacao---versoes-1-e-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Exercício de aplicação – Versões 1 e 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="as-classes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. As classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="excecoes-e-erros.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Exceções e erros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Exercício prático – Versão 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="traits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aplicacoes-em-camadas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Aplicações em camadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-de-aplicacao---versao-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Exercício de aplicação – versão 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usando-o-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Usando o SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Exercício prático – Versão 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-de-aplicacao---versao-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Exercício de aplicação – Versão 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Exercício prático – Versão 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="funcoes-de-rede.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Funções de rede
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-services.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Web services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Exercício prático – Versão 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Exercício prático – Versão 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Exercício de aplicação – Versão 10
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="exercicio-de-aplicacao---versao-10.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Exercício de aplicação – Versão 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#201-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1. Redis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202-instalacao-do-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.2. Instalação do Redis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#203-o-cliente-redis-em-modo-de-comando" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.3. O cliente Redis em modo de comando
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#204-instalacao-de-um-cliente-redis-para-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.4. Instalação de um cliente Redis para PHP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#205-codigo-do-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.5. Código do servidor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#206-codigo-do-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.6. Código do cliente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#207-testes-do-cliente-com-phpunit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.7. Testes do cliente com [PHPUnit]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#208-visualizacao-do-conteudo-do-servidor-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.8. Visualização do conteúdo do servidor Redis
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="processamento-de-documentos-xml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Processamento de documentos XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Exercício prático – Versão 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Exercício prático – Versão 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exercicio-pratico---versao-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Exercício prático – versão 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusao.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Conclusão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="20-exercicio-de-aplicacao-versao-10">20. <span style="color: #2e74b5">Exercício de aplicação – Versão 10</span></h1>
+<p>A versão anterior mostrou que os dados tributários, compartilhados por todos os usuários da aplicação, devem ser armazenados em uma memória de escopo <em>[application]</em>. Usaremos um servidor Redis (<a href="https://redis.io/"><u><span style="color: #0563c1">https://redis.io</span></u></a>) para implementar isso.</p>
+<h2 id="201-redis">20.1. <span style="color: #2e74b5">Redis</span></h2>
+<p>O Redis é um servidor que armazena dados em memória na forma de pares [key, value]. É muito rápido e amplamente usado por aplicações web como cache, isto é, como um repositório de dados custosos de obter. A memória de escopo <em>[application]</em> será implementada por um servidor Redis. Os scripts PHP que precisarem dessa memória de aplicação serão clientes desse servidor:</p>
+<p><img src="images/10000000000006E50000016D026275D9.png" width="567" height="117" style="width:15cm;height:3.103cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006E50000016D026275D9.png" /></p>
+<ul>
+<li>Em <em>[1]</em>, um script (PHP) envia um comando ao servidor Redis, por exemplo, para solicitar o valor associado a uma chave;</li>
+<li>Em <em>[2]</em>, o servidor Redis responde.</li>
+</ul>
+<p>O servidor Redis funciona de forma independente dos scripts PHP: os dados armazenados nele continuam disponíveis de uma requisição para outra e para todos os usuários da aplicação.</p>
+<h2 id="202-instalacao-do-redis">20.2. <span style="color: #2e74b5">Instalação do Redis</span></h2>
+<p><em>[Laragon]</em> vem com um servidor Redis desativado por padrão. Você pode ativá-lo nas preferências do <em>[Laragon]</em> (menu <em>[Preferences]</em>, aba <em>[Services &amp; Ports]</em>) marcando a caixa de seleção <em>[Redis]</em>. Deixe a porta <em>[6379]</em> como está, pois é a porta padrão usada pelos clientes Redis. O servidor Redis é então iniciado junto com os demais serviços do <em>[Laragon]</em> (Apache, MySQL...) ao clicar no botão <em>[Start All]</em>.</p>
+<h2 id="203-o-cliente-redis-em-modo-de-comando">20.3. <span style="color: #2e74b5">O cliente Redis em modo de comando</span></h2>
+<p>O servidor Redis pode ser consultado em modo de comando. Abra um terminal do <em>[Laragon]</em> e digite o comando <em>[redis-cli]</em>, que inicia o cliente do servidor Redis em modo de comando. O cliente exibe então o prompt <em>[127.0.0.1:6379&gt;]</em>: ele está conectado ao servidor Redis da máquina local (endereço IP 127.0.0.1) na porta 6379. Eis uma sessão de exemplo:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&gt; redis-cli
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>127.0.0.1:6379&gt; command count
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>(integer) 240
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>127.0.0.1:6379&gt; set title "PHP 8 by example"
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>OK
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>127.0.0.1:6379&gt; get title
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>"PHP 8 by example"
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>127.0.0.1:6379&gt; exists title
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>(integer) 1
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>127.0.0.1:6379&gt; del title
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>(integer) 1
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>127.0.0.1:6379&gt; get title
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>(nil)
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>127.0.0.1:6379&gt; exists title
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>(integer) 0
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>127.0.0.1:6379&gt; quit
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Linha 3: O cliente Redis tem mais de 200 comandos para se comunicar com o servidor. Um deles, <em>[command count]</em>, exibe o número exato de comandos disponíveis na versão utilizada;</li>
+<li>Linhas 4–7: Veremos apenas os comandos de que precisaremos em nossa aplicação PHP. Usaremos o Redis para uma única coisa: associar um valor a uma chave na memória do Redis. Isso é feito com o comando Redis <em>[set key value]</em>. O valor pode então ser recuperado com o comando <em>[get key]</em>. É tudo de que precisaremos;</li>
+<li>linhas 8–9: O comando <em>[exists]</em> verifica se uma chave existe: retorna 1 se a chave existe e 0 caso contrário;</li>
+<li>linhas 10–11: O comando <em>[del]</em> exclui uma chave;</li>
+<li>linhas 12–13: se você solicitar o valor de uma chave inexistente, obtém o valor <em>[nil],</em> indicando que a chave não foi encontrada;</li>
+<li>linha 16: Para sair do cliente Redis, digite o comando <em>[quit]</em>.</li>
+</ul>
+<p>Pode ser necessário limpar toda a memória do Redis. Isso é feito com o comando <em>[flushdb]</em>.</p>
+<h2 id="204-instalacao-de-um-cliente-redis-para-php">20.4. <span style="color: #2e74b5">Instalação de um cliente Redis para PHP</span></h2>
+<p>Agora precisamos de um cliente Redis para PHP. Existem dois principais:</p>
+<ul>
+<li>a extensão PHP <em>[phpredis]</em>, escrita em C, que deve ser adicionada à configuração do PHP;</li>
+<li>a biblioteca <em>[Predis]</em> (<a href="https://github.com/predis/predis"><u><span style="color: #0563c1">https://github.com/predis/predis</span></u></a>), escrita em PHP, que é instalada com o <em>[Composer]</em>.</li>
+</ul>
+<p>Como no curso de PHP 7, usaremos o <em>[Predis]</em>, versão 3. Ele está declarado no arquivo <em>[composer.json]</em> da pasta <em>[php8-oct-2026]</em> e foi instalado junto com as demais bibliotecas do curso pelo comando <strong><em>[composer install]</em></strong>. Pode ser encontrado na pasta <em>[vendor/predis/predis]</em>. O carregador de classes do <em>[Composer]</em> o suporta: ao contrário do curso de PHP 7, não há mais um arquivo <em>[predis/autoload.php]</em> a incluir nem um método <em>[Predis\Autoloader::register]</em> a chamar.</p>
+<h2 id="205-codigo-do-servidor">20.5. <span style="color: #2e74b5">Código do servidor</span></h2>
+<p>O servidor da versão 10 é composto pelos seguintes arquivos:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>scripts-web/tax/version-10
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>├── Data
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>│   ├── .htaccess
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>│   ├── config-server.json
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>│   └── logs.txt
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>└── tax-server.php
+</code></pre></div></td></tr></table></div>
+<p>O arquivo de configuração <em>[config-server.json]</em> muda da seguinte forma:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nt">"databaseFilename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../version-08/Data/database-mysql.json"</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="s2">"../../../scripts-console/tax/version-05/Entities/TaxException.php"</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="s2">"../../../scripts-console/tax/version-05/Entities/TaxAdminData.php"</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="s2">"../../../scripts-console/tax/version-05/Entities/Database.php"</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">        </span><span class="s2">"../../../scripts-console/tax/version-05/Utilities/Utilities.php"</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="s2">"../version-08/Dao/InterfaceServerDao.php"</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="s2">"../version-08/Dao/ServerDao.php"</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">        </span><span class="s2">"../version-09/Dao/ServerDaoWithSession.php"</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">        </span><span class="s2">"../version-08/Business/InterfaceServerBusiness.php"</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="s2">"../version-08/Business/ServerBusiness.php"</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">        </span><span class="s2">"../version-09/Utilities/Logger.php"</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">        </span><span class="s2">"../version-09/Utilities/SendAdminMail.php"</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">            </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">            </span><span class="nt">"passwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">    </span><span class="nt">"adminMail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">        </span><span class="nt">"smtp-server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">        </span><span class="nt">"smtp-port"</span><span class="p">:</span><span class="w"> </span><span class="mi">1025</span><span class="p">,</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">        </span><span class="nt">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guest@localhost"</span><span class="p">,</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">        </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guest@localhost"</span><span class="p">,</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">        </span><span class="nt">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tax calculation server crash"</span><span class="p">,</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">        </span><span class="nt">"tls"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w">        </span><span class="nt">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w">    </span><span class="nt">"logsFilename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data/logs.txt"</span><span class="p">,</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="w">    </span><span class="nt">"redis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="w">        </span><span class="nt">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tcp"</span><span class="p">,</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="w">        </span><span class="nt">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="w">        </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">6379</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Comentários</p>
+<ul>
+<li>linhas 3–15: A versão 10 não traz nenhuma novidade além do script <em>[tax-server.php]</em>. Ela usa elementos das versões 5, 8 e 9;</li>
+<li>Linhas 32–37: Parâmetros de conexão ao servidor Redis: o protocolo (tcp), o host e a porta. Esses são os valores padrão do <em>[Predis]</em>, mas é melhor especificá-los na configuração: se o servidor Redis mudar para outro host ou outra porta, só será necessário atualizar a configuração.</li>
+</ul>
+<p>O código do servidor <em>[tax-server.php]</em> muda da seguinte forma:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-3-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-3-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-3-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-3-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-3-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-3-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-3-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-3-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-3-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-3-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-3-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-3-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-3-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-3-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-3-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-3-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-3-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-3-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-3-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-3-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-3-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-3-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-3-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-3-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-3-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-3-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-3-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-3-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-3-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-3-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-3-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-3-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-3-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-3-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-3-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-3-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-3-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-3-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-3-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-3-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-3-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-3-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-3-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-3-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-3-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-3-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-3-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-3-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-3-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-3-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-3-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-3-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-3-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-3-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-3-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-3-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-3-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-3-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-3-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-3-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-3-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-3-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-3-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-3-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-3-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-3-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-3-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-3-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-3-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-3-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-3-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-3-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-3-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-3-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-3-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-3-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-3-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-3-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-3-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-3-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-3-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-3-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-3-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-3-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-3-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-3-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-3-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-3-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-3-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-3-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-3-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-3-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-3-100">100</a></span>
+<span class="normal"><a href="#__codelineno-3-101">101</a></span>
+<span class="normal"><a href="#__codelineno-3-102">102</a></span>
+<span class="normal"><a href="#__codelineno-3-103">103</a></span>
+<span class="normal"><a href="#__codelineno-3-104">104</a></span>
+<span class="normal"><a href="#__codelineno-3-105">105</a></span>
+<span class="normal"><a href="#__codelineno-3-106">106</a></span>
+<span class="normal"><a href="#__codelineno-3-107">107</a></span>
+<span class="normal"><a href="#__codelineno-3-108">108</a></span>
+<span class="normal"><a href="#__codelineno-3-109">109</a></span>
+<span class="normal"><a href="#__codelineno-3-110">110</a></span>
+<span class="normal"><a href="#__codelineno-3-111">111</a></span>
+<span class="normal"><a href="#__codelineno-3-112">112</a></span>
+<span class="normal"><a href="#__codelineno-3-113">113</a></span>
+<span class="normal"><a href="#__codelineno-3-114">114</a></span>
+<span class="normal"><a href="#__codelineno-3-115">115</a></span>
+<span class="normal"><a href="#__codelineno-3-116">116</a></span>
+<span class="normal"><a href="#__codelineno-3-117">117</a></span>
+<span class="normal"><a href="#__codelineno-3-118">118</a></span>
+<span class="normal"><a href="#__codelineno-3-119">119</a></span>
+<span class="normal"><a href="#__codelineno-3-120">120</a></span>
+<span class="normal"><a href="#__codelineno-3-121">121</a></span>
+<span class="normal"><a href="#__codelineno-3-122">122</a></span>
+<span class="normal"><a href="#__codelineno-3-123">123</a></span>
+<span class="normal"><a href="#__codelineno-3-124">124</a></span>
+<span class="normal"><a href="#__codelineno-3-125">125</a></span>
+<span class="normal"><a href="#__codelineno-3-126">126</a></span>
+<span class="normal"><a href="#__codelineno-3-127">127</a></span>
+<span class="normal"><a href="#__codelineno-3-128">128</a></span>
+<span class="normal"><a href="#__codelineno-3-129">129</a></span>
+<span class="normal"><a href="#__codelineno-3-130">130</a></span>
+<span class="normal"><a href="#__codelineno-3-131">131</a></span>
+<span class="normal"><a href="#__codelineno-3-132">132</a></span>
+<span class="normal"><a href="#__codelineno-3-133">133</a></span>
+<span class="normal"><a href="#__codelineno-3-134">134</a></span>
+<span class="normal"><a href="#__codelineno-3-135">135</a></span>
+<span class="normal"><a href="#__codelineno-3-136">136</a></span>
+<span class="normal"><a href="#__codelineno-3-137">137</a></span>
+<span class="normal"><a href="#__codelineno-3-138">138</a></span>
+<span class="normal"><a href="#__codelineno-3-139">139</a></span>
+<span class="normal"><a href="#__codelineno-3-140">140</a></span>
+<span class="normal"><a href="#__codelineno-3-141">141</a></span>
+<span class="normal"><a href="#__codelineno-3-142">142</a></span>
+<span class="normal"><a href="#__codelineno-3-143">143</a></span>
+<span class="normal"><a href="#__codelineno-3-144">144</a></span>
+<span class="normal"><a href="#__codelineno-3-145">145</a></span>
+<span class="normal"><a href="#__codelineno-3-146">146</a></span>
+<span class="normal"><a href="#__codelineno-3-147">147</a></span>
+<span class="normal"><a href="#__codelineno-3-148">148</a></span>
+<span class="normal"><a href="#__codelineno-3-149">149</a></span>
+<span class="normal"><a href="#__codelineno-3-150">150</a></span>
+<span class="normal"><a href="#__codelineno-3-151">151</a></span>
+<span class="normal"><a href="#__codelineno-3-152">152</a></span>
+<span class="normal"><a href="#__codelineno-3-153">153</a></span>
+<span class="normal"><a href="#__codelineno-3-154">154</a></span>
+<span class="normal"><a href="#__codelineno-3-155">155</a></span>
+<span class="normal"><a href="#__codelineno-3-156">156</a></span>
+<span class="normal"><a href="#__codelineno-3-157">157</a></span>
+<span class="normal"><a href="#__codelineno-3-158">158</a></span>
+<span class="normal"><a href="#__codelineno-3-159">159</a></span>
+<span class="normal"><a href="#__codelineno-3-160">160</a></span>
+<span class="normal"><a href="#__codelineno-3-161">161</a></span>
+<span class="normal"><a href="#__codelineno-3-162">162</a></span>
+<span class="normal"><a href="#__codelineno-3-163">163</a></span>
+<span class="normal"><a href="#__codelineno-3-164">164</a></span>
+<span class="normal"><a href="#__codelineno-3-165">165</a></span>
+<span class="normal"><a href="#__codelineno-3-166">166</a></span>
+<span class="normal"><a href="#__codelineno-3-167">167</a></span>
+<span class="normal"><a href="#__codelineno-3-168">168</a></span>
+<span class="normal"><a href="#__codelineno-3-169">169</a></span>
+<span class="normal"><a href="#__codelineno-3-170">170</a></span>
+<span class="normal"><a href="#__codelineno-3-171">171</a></span>
+<span class="normal"><a href="#__codelineno-3-172">172</a></span>
+<span class="normal"><a href="#__codelineno-3-173">173</a></span>
+<span class="normal"><a href="#__codelineno-3-174">174</a></span>
+<span class="normal"><a href="#__codelineno-3-175">175</a></span>
+<span class="normal"><a href="#__codelineno-3-176">176</a></span>
+<span class="normal"><a href="#__codelineno-3-177">177</a></span>
+<span class="normal"><a href="#__codelineno-3-178">178</a></span>
+<span class="normal"><a href="#__codelineno-3-179">179</a></span>
+<span class="normal"><a href="#__codelineno-3-180">180</a></span>
+<span class="normal"><a href="#__codelineno-3-181">181</a></span>
+<span class="normal"><a href="#__codelineno-3-182">182</a></span>
+<span class="normal"><a href="#__codelineno-3-183">183</a></span>
+<span class="normal"><a href="#__codelineno-3-184">184</a></span>
+<span class="normal"><a href="#__codelineno-3-185">185</a></span>
+<span class="normal"><a href="#__codelineno-3-186">186</a></span>
+<span class="normal"><a href="#__codelineno-3-187">187</a></span>
+<span class="normal"><a href="#__codelineno-3-188">188</a></span>
+<span class="normal"><a href="#__codelineno-3-189">189</a></span>
+<span class="normal"><a href="#__codelineno-3-190">190</a></span>
+<span class="normal"><a href="#__codelineno-3-191">191</a></span>
+<span class="normal"><a href="#__codelineno-3-192">192</a></span>
+<span class="normal"><a href="#__codelineno-3-193">193</a></span>
+<span class="normal"><a href="#__codelineno-3-194">194</a></span>
+<span class="normal"><a href="#__codelineno-3-195">195</a></span>
+<span class="normal"><a href="#__codelineno-3-196">196</a></span>
+<span class="normal"><a href="#__codelineno-3-197">197</a></span>
+<span class="normal"><a href="#__codelineno-3-198">198</a></span>
+<span class="normal"><a href="#__codelineno-3-199">199</a></span>
+<span class="normal"><a href="#__codelineno-3-200">200</a></span>
+<span class="normal"><a href="#__codelineno-3-201">201</a></span>
+<span class="normal"><a href="#__codelineno-3-202">202</a></span>
+<span class="normal"><a href="#__codelineno-3-203">203</a></span>
+<span class="normal"><a href="#__codelineno-3-204">204</a></span>
+<span class="normal"><a href="#__codelineno-3-205">205</a></span>
+<span class="normal"><a href="#__codelineno-3-206">206</a></span>
+<span class="normal"><a href="#__codelineno-3-207">207</a></span>
+<span class="normal"><a href="#__codelineno-3-208">208</a></span>
+<span class="normal"><a href="#__codelineno-3-209">209</a></span>
+<span class="normal"><a href="#__codelineno-3-210">210</a></span>
+<span class="normal"><a href="#__codelineno-3-211">211</a></span>
+<span class="normal"><a href="#__codelineno-3-212">212</a></span>
+<span class="normal"><a href="#__codelineno-3-213">213</a></span>
+<span class="normal"><a href="#__codelineno-3-214">214</a></span>
+<span class="normal"><a href="#__codelineno-3-215">215</a></span>
+<span class="normal"><a href="#__codelineno-3-216">216</a></span>
+<span class="normal"><a href="#__codelineno-3-217">217</a></span>
+<span class="normal"><a href="#__codelineno-3-218">218</a></span>
+<span class="normal"><a href="#__codelineno-3-219">219</a></span>
+<span class="normal"><a href="#__codelineno-3-220">220</a></span>
+<span class="normal"><a href="#__codelineno-3-221">221</a></span>
+<span class="normal"><a href="#__codelineno-3-222">222</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">// conformidade estrita com os tipos declarados dos parâmetros e resultados das funções</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">// namespace</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">namespace</span> <span class="nx">Application</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">// dependências do Symfony</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\JsonResponse</span><span class="p">;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Session\Session</span><span class="p">;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1">// dependências do Predis</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="k">use</span> <span class="nx">Predis\Client</span> <span class="k">as</span> <span class="nx">RedisClient</span><span class="p">;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="k">use</span> <span class="nx">Predis\PredisException</span><span class="p">;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1">// alias de classe: a camada [dao] da versão 9 é usada com o Redis</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="k">use</span> <span class="nx">Application\ServerDaoWithSession</span> <span class="k">as</span> <span class="nx">ServerDaoWithRedis</span><span class="p">;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="c1">// os erros do PHP não são enviados ao cliente (vão para o log do servidor web)</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="nb">ini_set</span><span class="p">(</span><span class="s2">"display_errors"</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">);</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1">// a pasta raiz do servidor: os caminhos do arquivo de configuração são relativos a esta pasta</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="k">const</span> <span class="no">ROOT_DIRECTORY</span> <span class="o">=</span> <span class="no">__DIR__</span><span class="p">;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="c1">// caminho do arquivo de configuração</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="k">const</span> <span class="no">CONFIG_FILENAME</span> <span class="o">=</span> <span class="nx">ROOT_DIRECTORY</span> <span class="o">.</span> <span class="s2">"/Data/config-server.json"</span><span class="p">;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="c1">// recuperamos a configuração</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="nv">$config</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="nx">CONFIG_FILENAME</span><span class="p">),</span> <span class="k">true</span><span class="p">,</span> <span class="nx">flags</span><span class="o">:</span> <span class="nx">JSON_THROW_ON_ERROR</span><span class="p">);</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="c1">// incluímos as dependências necessárias ao script</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="k">require_once</span> <span class="nx">ROOT_DIRECTORY</span> <span class="o">.</span> <span class="s2">"/../../../vendor/autoload.php"</span><span class="p">;</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">"dependencies"</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$dependency</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a>    <span class="k">require_once</span> <span class="nx">ROOT_DIRECTORY</span> <span class="o">.</span> <span class="s2">"/</span><span class="si">$dependency</span><span class="s2">"</span><span class="p">;</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="p">}</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="c1">// sessão: agora ela contém apenas o identificador do usuário autenticado</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="nv">$session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">();</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="nv">$session</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="c1">// criação do arquivo de log</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="k">try</span> <span class="p">{</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a>    <span class="nv">$logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="nx">ROOT_DIRECTORY</span> <span class="o">.</span> <span class="s2">"/"</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">"logsFilename"</span><span class="p">]);</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">TaxException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45"></a>    <span class="c1">// erro 500 sem logs - a mensagem não deve revelar a árvore de arquivos do servidor</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46"></a>    <span class="nv">$message</span> <span class="o">=</span> <span class="s2">"Failed to create the log file [</span><span class="si">{</span><span class="nv">$config</span><span class="p">[</span><span class="s2">"logsFilename"</span><span class="p">]</span><span class="si">}</span><span class="s2">]"</span><span class="p">;</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47"></a>    <span class="nx">doInternalServerError</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">"adminMail"</span><span class="p">]);</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48"></a>    <span class="c1">// concluído</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49"></a>    <span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50"></a><span class="p">}</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51"></a>
+<a id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="c1">// 1º log</span>
+<a id="__codelineno-3-53" name="__codelineno-3-53"></a><span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"---new request"</span><span class="p">);</span>
+<a id="__codelineno-3-54" name="__codelineno-3-54"></a>
+<a id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="c1">// recuperamos a requisição atual</span>
+<a id="__codelineno-3-56" name="__codelineno-3-56"></a><span class="nv">$request</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">createFromGlobals</span><span class="p">();</span>
+<a id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="c1">// autenticação apenas na 1ª vez</span>
+<a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$session</span><span class="o">-&gt;</span><span class="na">has</span><span class="p">(</span><span class="s2">"user"</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-3-59" name="__codelineno-3-59"></a>    <span class="c1">// log</span>
+<a id="__codelineno-3-60" name="__codelineno-3-60"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"Authentication in progress…"</span><span class="p">);</span>
+<a id="__codelineno-3-61" name="__codelineno-3-61"></a>    <span class="c1">// as credenciais enviadas pelo cliente (null se ele não enviou nenhuma)</span>
+<a id="__codelineno-3-62" name="__codelineno-3-62"></a>    <span class="nv">$requestUser</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getUser</span><span class="p">();</span>
+<a id="__codelineno-3-63" name="__codelineno-3-63"></a>    <span class="nv">$requestPassword</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPassword</span><span class="p">();</span>
+<a id="__codelineno-3-64" name="__codelineno-3-64"></a>    <span class="c1">// o usuário é um dos usuários autorizados?</span>
+<a id="__codelineno-3-65" name="__codelineno-3-65"></a>    <span class="nv">$found</span> <span class="o">=</span> <span class="nv">$requestUser</span> <span class="o">!==</span> <span class="k">null</span> <span class="o">&amp;&amp;</span> <span class="nv">$requestPassword</span> <span class="o">!==</span> <span class="k">null</span>
+<a id="__codelineno-3-66" name="__codelineno-3-66"></a>        <span class="o">&amp;&amp;</span> <span class="nx">array_any</span><span class="p">(</span>
+<a id="__codelineno-3-67" name="__codelineno-3-67"></a>            <span class="nv">$config</span><span class="p">[</span><span class="s2">"users"</span><span class="p">],</span>
+<a id="__codelineno-3-68" name="__codelineno-3-68"></a>            <span class="nx">fn</span><span class="p">(</span><span class="k">array</span> <span class="nv">$user</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">[</span><span class="s2">"login"</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$requestUser</span> <span class="o">&amp;&amp;</span> <span class="nb">hash_equals</span><span class="p">(</span><span class="nv">$user</span><span class="p">[</span><span class="s2">"passwd"</span><span class="p">],</span> <span class="nv">$requestPassword</span><span class="p">)</span>
+<a id="__codelineno-3-69" name="__codelineno-3-69"></a>        <span class="p">);</span>
+<a id="__codelineno-3-70" name="__codelineno-3-70"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$found</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-71" name="__codelineno-3-71"></a>        <span class="c1">// não encontrado - código 401</span>
+<a id="__codelineno-3-72" name="__codelineno-3-72"></a>        <span class="nx">sendResponse</span><span class="p">(</span>
+<a id="__codelineno-3-73" name="__codelineno-3-73"></a>            <span class="p">[</span><span class="s2">"error"</span> <span class="o">=&gt;</span> <span class="s2">"Authentication failed [</span><span class="si">$requestUser</span><span class="s2">]"</span><span class="p">],</span>
+<a id="__codelineno-3-74" name="__codelineno-3-74"></a>            <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_UNAUTHORIZED</span><span class="p">,</span>
+<a id="__codelineno-3-75" name="__codelineno-3-75"></a>            <span class="p">[</span><span class="s2">"WWW-Authenticate"</span> <span class="o">=&gt;</span> <span class="s1">'Basic realm="Tax calculation server"'</span><span class="p">],</span>
+<a id="__codelineno-3-76" name="__codelineno-3-76"></a>            <span class="nv">$logger</span>
+<a id="__codelineno-3-77" name="__codelineno-3-77"></a>        <span class="p">);</span>
+<a id="__codelineno-3-78" name="__codelineno-3-78"></a>        <span class="c1">// concluído</span>
+<a id="__codelineno-3-79" name="__codelineno-3-79"></a>        <span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-3-80" name="__codelineno-3-80"></a>    <span class="p">}</span>
+<a id="__codelineno-3-81" name="__codelineno-3-81"></a>    <span class="c1">// registramos na sessão que o usuário foi autenticado</span>
+<a id="__codelineno-3-82" name="__codelineno-3-82"></a>    <span class="nv">$session</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s2">"user"</span><span class="p">,</span> <span class="nv">$requestUser</span><span class="p">);</span>
+<a id="__codelineno-3-83" name="__codelineno-3-83"></a>    <span class="c1">// log</span>
+<a id="__codelineno-3-84" name="__codelineno-3-84"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"Authentication successful [</span><span class="si">$requestUser</span><span class="s2">]"</span><span class="p">);</span>
+<a id="__codelineno-3-85" name="__codelineno-3-85"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-3-86" name="__codelineno-3-86"></a>    <span class="c1">// log</span>
+<a id="__codelineno-3-87" name="__codelineno-3-87"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"Authentication taken from the session…"</span><span class="p">);</span>
+<a id="__codelineno-3-88" name="__codelineno-3-88"></a><span class="p">}</span>
+<a id="__codelineno-3-89" name="__codelineno-3-89"></a>
+<a id="__codelineno-3-90" name="__codelineno-3-90"></a><span class="c1">// temos um usuário válido - verificamos os parâmetros recebidos</span>
+<a id="__codelineno-3-91" name="__codelineno-3-91"></a><span class="nv">$errors</span> <span class="o">=</span> <span class="p">[];</span>
+<a id="__codelineno-3-92" name="__codelineno-3-92"></a><span class="c1">// devemos ter uma requisição GET com três parâmetros</span>
+<a id="__codelineno-3-93" name="__codelineno-3-93"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getMethod</span><span class="p">()</span> <span class="o">!==</span> <span class="s2">"GET"</span> <span class="o">||</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">query</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">()</span> <span class="o">!==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-94" name="__codelineno-3-94"></a>    <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"GET method required with only the parameters [married, children, salary]"</span><span class="p">;</span>
+<a id="__codelineno-3-95" name="__codelineno-3-95"></a><span class="p">}</span>
+<a id="__codelineno-3-96" name="__codelineno-3-96"></a><span class="c1">// o estado civil</span>
+<a id="__codelineno-3-97" name="__codelineno-3-97"></a><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">query</span><span class="o">-&gt;</span><span class="na">has</span><span class="p">(</span><span class="s2">"married"</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-3-98" name="__codelineno-3-98"></a>    <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"missing married parameter"</span><span class="p">;</span>
+<a id="__codelineno-3-99" name="__codelineno-3-99"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-3-100" name="__codelineno-3-100"></a>    <span class="nv">$married</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">query</span><span class="o">-&gt;</span><span class="na">getString</span><span class="p">(</span><span class="s2">"married"</span><span class="p">)));</span>
+<a id="__codelineno-3-101" name="__codelineno-3-101"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$married</span><span class="p">,</span> <span class="p">[</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">],</span> <span class="k">true</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-3-102" name="__codelineno-3-102"></a>        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"invalid married parameter [</span><span class="si">$married</span><span class="s2">]"</span><span class="p">;</span>
+<a id="__codelineno-3-103" name="__codelineno-3-103"></a>    <span class="p">}</span>
+<a id="__codelineno-3-104" name="__codelineno-3-104"></a><span class="p">}</span>
+<a id="__codelineno-3-105" name="__codelineno-3-105"></a><span class="c1">// o número de filhos e o salário: inteiros &gt;= 0</span>
+<a id="__codelineno-3-106" name="__codelineno-3-106"></a><span class="nv">$values</span> <span class="o">=</span> <span class="p">[];</span>
+<a id="__codelineno-3-107" name="__codelineno-3-107"></a><span class="k">foreach</span> <span class="p">([</span><span class="s2">"children"</span><span class="p">,</span> <span class="s2">"salary"</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$parameter</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-108" name="__codelineno-3-108"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">query</span><span class="o">-&gt;</span><span class="na">has</span><span class="p">(</span><span class="nv">$parameter</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-3-109" name="__codelineno-3-109"></a>        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"missing </span><span class="si">$parameter</span><span class="s2"> parameter"</span><span class="p">;</span>
+<a id="__codelineno-3-110" name="__codelineno-3-110"></a>        <span class="k">continue</span><span class="p">;</span>
+<a id="__codelineno-3-111" name="__codelineno-3-111"></a>    <span class="p">}</span>
+<a id="__codelineno-3-112" name="__codelineno-3-112"></a>    <span class="nv">$value</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">query</span><span class="o">-&gt;</span><span class="na">getString</span><span class="p">(</span><span class="nv">$parameter</span><span class="p">));</span>
+<a id="__codelineno-3-113" name="__codelineno-3-113"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">preg_match</span><span class="p">(</span><span class="s1">'/^\d+$/'</span><span class="p">,</span> <span class="nv">$value</span><span class="p">)</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-114" name="__codelineno-3-114"></a>        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"invalid </span><span class="si">$parameter</span><span class="s2"> parameter [</span><span class="si">$value</span><span class="s2">]"</span><span class="p">;</span>
+<a id="__codelineno-3-115" name="__codelineno-3-115"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-3-116" name="__codelineno-3-116"></a>        <span class="nv">$values</span><span class="p">[</span><span class="nv">$parameter</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$value</span><span class="p">;</span>
+<a id="__codelineno-3-117" name="__codelineno-3-117"></a>    <span class="p">}</span>
+<a id="__codelineno-3-118" name="__codelineno-3-118"></a><span class="p">}</span>
+<a id="__codelineno-3-119" name="__codelineno-3-119"></a><span class="c1">// há outros parâmetros na requisição?</span>
+<a id="__codelineno-3-120" name="__codelineno-3-120"></a><span class="k">foreach</span> <span class="p">(</span><span class="nb">array_diff</span><span class="p">(</span><span class="nb">array_keys</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">query</span><span class="o">-&gt;</span><span class="na">all</span><span class="p">()),</span> <span class="p">[</span><span class="s2">"married"</span><span class="p">,</span> <span class="s2">"children"</span><span class="p">,</span> <span class="s2">"salary"</span><span class="p">])</span> <span class="k">as</span> <span class="nv">$parameter</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-121" name="__codelineno-3-121"></a>    <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"invalid parameter [</span><span class="si">$parameter</span><span class="s2">]"</span><span class="p">;</span>
+<a id="__codelineno-3-122" name="__codelineno-3-122"></a><span class="p">}</span>
+<a id="__codelineno-3-123" name="__codelineno-3-123"></a><span class="c1">// erros?</span>
+<a id="__codelineno-3-124" name="__codelineno-3-124"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$errors</span> <span class="o">!==</span> <span class="p">[])</span> <span class="p">{</span>
+<a id="__codelineno-3-125" name="__codelineno-3-125"></a>    <span class="c1">// enviamos um código de erro 400 ao cliente</span>
+<a id="__codelineno-3-126" name="__codelineno-3-126"></a>    <span class="nx">sendResponse</span><span class="p">([</span><span class="s2">"errors"</span> <span class="o">=&gt;</span> <span class="nv">$errors</span><span class="p">],</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_BAD_REQUEST</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">);</span>
+<a id="__codelineno-3-127" name="__codelineno-3-127"></a>    <span class="c1">// concluído</span>
+<a id="__codelineno-3-128" name="__codelineno-3-128"></a>    <span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-3-129" name="__codelineno-3-129"></a><span class="p">}</span>
+<a id="__codelineno-3-130" name="__codelineno-3-130"></a><span class="c1">// log</span>
+<a id="__codelineno-3-131" name="__codelineno-3-131"></a><span class="p">[</span><span class="nv">$children</span><span class="p">,</span> <span class="nv">$salary</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$values</span><span class="p">[</span><span class="s2">"children"</span><span class="p">],</span> <span class="nv">$values</span><span class="p">[</span><span class="s2">"salary"</span><span class="p">]];</span>
+<a id="__codelineno-3-132" name="__codelineno-3-132"></a><span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"valid parameters ['married'=&gt;</span><span class="si">$married</span><span class="s2">, 'children'=&gt;</span><span class="si">$children</span><span class="s2">, 'salary'=&gt;</span><span class="si">$salary</span><span class="s2">]"</span><span class="p">);</span>
+<a id="__codelineno-3-133" name="__codelineno-3-133"></a>
+<a id="__codelineno-3-134" name="__codelineno-3-134"></a><span class="c1">// temos tudo o que é preciso para trabalhar</span>
+<a id="__codelineno-3-135" name="__codelineno-3-135"></a><span class="c1">// a memória de escopo [application]: um servidor Redis</span>
+<a id="__codelineno-3-136" name="__codelineno-3-136"></a><span class="k">try</span> <span class="p">{</span>
+<a id="__codelineno-3-137" name="__codelineno-3-137"></a>    <span class="c1">// o cliente Redis</span>
+<a id="__codelineno-3-138" name="__codelineno-3-138"></a>    <span class="nv">$redis</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RedisClient</span><span class="p">(</span><span class="nv">$config</span><span class="p">[</span><span class="s2">"redis"</span><span class="p">]);</span>
+<a id="__codelineno-3-139" name="__codelineno-3-139"></a>    <span class="c1">// conectamo-nos ao servidor de imediato para saber se ele está disponível</span>
+<a id="__codelineno-3-140" name="__codelineno-3-140"></a>    <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">();</span>
+<a id="__codelineno-3-141" name="__codelineno-3-141"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PredisException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-142" name="__codelineno-3-142"></a>    <span class="c1">// erro 500</span>
+<a id="__codelineno-3-143" name="__codelineno-3-143"></a>    <span class="nx">doInternalServerError</span><span class="p">(</span><span class="s2">"[redis], </span><span class="si">{</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">"adminMail"</span><span class="p">],</span> <span class="nv">$logger</span><span class="p">);</span>
+<a id="__codelineno-3-144" name="__codelineno-3-144"></a>    <span class="c1">// concluído</span>
+<a id="__codelineno-3-145" name="__codelineno-3-145"></a>    <span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-3-146" name="__codelineno-3-146"></a><span class="p">}</span>
+<a id="__codelineno-3-147" name="__codelineno-3-147"></a><span class="c1">// criação da camada [dao]</span>
+<a id="__codelineno-3-148" name="__codelineno-3-148"></a><span class="nv">$json</span> <span class="o">=</span> <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">"taxAdminData"</span><span class="p">);</span>
+<a id="__codelineno-3-149" name="__codelineno-3-149"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$json</span> <span class="o">===</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-150" name="__codelineno-3-150"></a>    <span class="c1">// os dados tributários são obtidos do banco de dados</span>
+<a id="__codelineno-3-151" name="__codelineno-3-151"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"tax data taken from the database"</span><span class="p">);</span>
+<a id="__codelineno-3-152" name="__codelineno-3-152"></a>    <span class="k">try</span> <span class="p">{</span>
+<a id="__codelineno-3-153" name="__codelineno-3-153"></a>        <span class="c1">// construção da camada [dao]</span>
+<a id="__codelineno-3-154" name="__codelineno-3-154"></a>        <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerDaoWithRedis</span><span class="p">(</span><span class="nx">ROOT_DIRECTORY</span> <span class="o">.</span> <span class="s2">"/"</span> <span class="o">.</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">"databaseFilename"</span><span class="p">]);</span>
+<a id="__codelineno-3-155" name="__codelineno-3-155"></a>        <span class="c1">// colocamos a string JSON dos dados tributários na memória de escopo [application]</span>
+<a id="__codelineno-3-156" name="__codelineno-3-156"></a>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s2">"taxAdminData"</span><span class="p">,</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$dao</span><span class="o">-&gt;</span><span class="na">getTaxAdminData</span><span class="p">());</span>
+<a id="__codelineno-3-157" name="__codelineno-3-157"></a>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">TaxException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-158" name="__codelineno-3-158"></a>        <span class="c1">// erro 500</span>
+<a id="__codelineno-3-159" name="__codelineno-3-159"></a>        <span class="nx">doInternalServerError</span><span class="p">(</span><span class="s2">"[dao], </span><span class="si">{</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$config</span><span class="p">[</span><span class="s2">"adminMail"</span><span class="p">],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$redis</span><span class="p">);</span>
+<a id="__codelineno-3-160" name="__codelineno-3-160"></a>        <span class="c1">// concluído</span>
+<a id="__codelineno-3-161" name="__codelineno-3-161"></a>        <span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-3-162" name="__codelineno-3-162"></a>    <span class="p">}</span>
+<a id="__codelineno-3-163" name="__codelineno-3-163"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-3-164" name="__codelineno-3-164"></a>    <span class="c1">// os dados tributários são obtidos da memória de escopo [application]</span>
+<a id="__codelineno-3-165" name="__codelineno-3-165"></a>    <span class="nv">$taxAdminData</span> <span class="o">=</span> <span class="nx">TaxAdminData</span><span class="o">::</span><span class="na">fromArray</span><span class="p">(</span><span class="nb">json_decode</span><span class="p">(</span><span class="nv">$json</span><span class="p">,</span> <span class="k">true</span><span class="p">,</span> <span class="nx">flags</span><span class="o">:</span> <span class="nx">JSON_THROW_ON_ERROR</span><span class="p">));</span>
+<a id="__codelineno-3-166" name="__codelineno-3-166"></a>    <span class="c1">// instanciação da camada [dao]</span>
+<a id="__codelineno-3-167" name="__codelineno-3-167"></a>    <span class="nv">$dao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerDaoWithRedis</span><span class="p">(</span><span class="nv">$taxAdminData</span><span class="p">);</span>
+<a id="__codelineno-3-168" name="__codelineno-3-168"></a>    <span class="c1">// log</span>
+<a id="__codelineno-3-169" name="__codelineno-3-169"></a>    <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span><span class="s2">"tax data taken from Redis"</span><span class="p">);</span>
+<a id="__codelineno-3-170" name="__codelineno-3-170"></a><span class="p">}</span>
+<a id="__codelineno-3-171" name="__codelineno-3-171"></a><span class="c1">// criação da camada [business]</span>
+<a id="__codelineno-3-172" name="__codelineno-3-172"></a><span class="nv">$business</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ServerBusiness</span><span class="p">(</span><span class="nv">$dao</span><span class="p">);</span>
+<a id="__codelineno-3-173" name="__codelineno-3-173"></a><span class="c1">// cálculo do imposto</span>
+<a id="__codelineno-3-174" name="__codelineno-3-174"></a><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$business</span><span class="o">-&gt;</span><span class="na">calculateTax</span><span class="p">(</span><span class="nv">$married</span><span class="p">,</span> <span class="nv">$children</span><span class="p">,</span> <span class="nv">$salary</span><span class="p">);</span>
+<a id="__codelineno-3-175" name="__codelineno-3-175"></a><span class="c1">// retornamos a resposta</span>
+<a id="__codelineno-3-176" name="__codelineno-3-176"></a><span class="nx">sendResponse</span><span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_OK</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$redis</span><span class="p">);</span>
+<a id="__codelineno-3-177" name="__codelineno-3-177"></a><span class="c1">// fim</span>
+<a id="__codelineno-3-178" name="__codelineno-3-178"></a><span class="k">exit</span><span class="p">;</span>
+<a id="__codelineno-3-179" name="__codelineno-3-179"></a>
+<a id="__codelineno-3-180" name="__codelineno-3-180"></a><span class="c1">// --------------------------------------------------------------------------</span>
+<a id="__codelineno-3-181" name="__codelineno-3-181"></a><span class="c1">// erro fatal: um e-mail ao administrador e uma resposta 500 ao cliente</span>
+<a id="__codelineno-3-182" name="__codelineno-3-182"></a><span class="k">function</span> <span class="nf">doInternalServerError</span><span class="p">(</span>
+<a id="__codelineno-3-183" name="__codelineno-3-183"></a>    <span class="nx">string</span> <span class="nv">$message</span><span class="p">,</span>
+<a id="__codelineno-3-184" name="__codelineno-3-184"></a>    <span class="k">array</span> <span class="nv">$adminMail</span><span class="p">,</span>
+<a id="__codelineno-3-185" name="__codelineno-3-185"></a>    <span class="o">?</span><span class="nx">Logger</span> <span class="nv">$logger</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-3-186" name="__codelineno-3-186"></a>    <span class="o">?</span><span class="nx">RedisClient</span> <span class="nv">$redis</span> <span class="o">=</span> <span class="k">null</span>
+<a id="__codelineno-3-187" name="__codelineno-3-187"></a><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
+<a id="__codelineno-3-188" name="__codelineno-3-188"></a>    <span class="c1">// a mensagem de erro de um driver de SGBD pode não estar codificada em UTF-8 (Windows-1252 no Windows)</span>
+<a id="__codelineno-3-189" name="__codelineno-3-189"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">mb_check_encoding</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="s2">"UTF-8"</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-3-190" name="__codelineno-3-190"></a>        <span class="nv">$message</span> <span class="o">=</span> <span class="nb">mb_convert_encoding</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="s2">"UTF-8"</span><span class="p">,</span> <span class="s2">"Windows-1252"</span><span class="p">);</span>
+<a id="__codelineno-3-191" name="__codelineno-3-191"></a>    <span class="p">}</span>
+<a id="__codelineno-3-192" name="__codelineno-3-192"></a>    <span class="c1">// enviamos um e-mail ao administrador</span>
+<a id="__codelineno-3-193" name="__codelineno-3-193"></a>    <span class="c1">// [SendAdminMail] captura todas as exceções e as registra ela mesma</span>
+<a id="__codelineno-3-194" name="__codelineno-3-194"></a>    <span class="p">(</span><span class="k">new</span> <span class="nx">SendAdminMail</span><span class="p">(</span><span class="nv">$adminMail</span><span class="p">,</span> <span class="nv">$logger</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
+<a id="__codelineno-3-195" name="__codelineno-3-195"></a>    <span class="c1">// enviamos um código de erro 500 ao cliente</span>
+<a id="__codelineno-3-196" name="__codelineno-3-196"></a>    <span class="nx">sendResponse</span><span class="p">([</span><span class="s2">"error"</span> <span class="o">=&gt;</span> <span class="nv">$message</span><span class="p">],</span> <span class="nx">Response</span><span class="o">::</span><span class="na">HTTP_INTERNAL_SERVER_ERROR</span><span class="p">,</span> <span class="p">[],</span> <span class="nv">$logger</span><span class="p">,</span> <span class="nv">$redis</span><span class="p">);</span>
+<a id="__codelineno-3-197" name="__codelineno-3-197"></a><span class="p">}</span>
+<a id="__codelineno-3-198" name="__codelineno-3-198"></a>
+<a id="__codelineno-3-199" name="__codelineno-3-199"></a><span class="c1">// envio da resposta HTTP ao cliente</span>
+<a id="__codelineno-3-200" name="__codelineno-3-200"></a><span class="c1">// $result: o array a enviar, na forma ["response" =&gt; $result]</span>
+<a id="__codelineno-3-201" name="__codelineno-3-201"></a><span class="c1">// $statusCode: o status HTTP da resposta</span>
+<a id="__codelineno-3-202" name="__codelineno-3-202"></a><span class="c1">// $headers: cabeçalhos HTTP a adicionar à resposta</span>
+<a id="__codelineno-3-203" name="__codelineno-3-203"></a><span class="c1">// $logger: o log da aplicação (null se não pôde ser criado)</span>
+<a id="__codelineno-3-204" name="__codelineno-3-204"></a><span class="c1">// $redis: o cliente Redis (null se ainda não foi criado)</span>
+<a id="__codelineno-3-205" name="__codelineno-3-205"></a><span class="k">function</span> <span class="nf">sendResponse</span><span class="p">(</span>
+<a id="__codelineno-3-206" name="__codelineno-3-206"></a>    <span class="k">array</span> <span class="nv">$result</span><span class="p">,</span>
+<a id="__codelineno-3-207" name="__codelineno-3-207"></a>    <span class="nx">int</span> <span class="nv">$statusCode</span><span class="p">,</span>
+<a id="__codelineno-3-208" name="__codelineno-3-208"></a>    <span class="k">array</span> <span class="nv">$headers</span> <span class="o">=</span> <span class="p">[],</span>
+<a id="__codelineno-3-209" name="__codelineno-3-209"></a>    <span class="o">?</span><span class="nx">Logger</span> <span class="nv">$logger</span> <span class="o">=</span> <span class="k">null</span><span class="p">,</span>
+<a id="__codelineno-3-210" name="__codelineno-3-210"></a>    <span class="o">?</span><span class="nx">RedisClient</span> <span class="nv">$redis</span> <span class="o">=</span> <span class="k">null</span>
+<a id="__codelineno-3-211" name="__codelineno-3-211"></a><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> <span class="p">{</span>
+<a id="__codelineno-3-212" name="__codelineno-3-212"></a>    <span class="c1">// a resposta JSON</span>
+<a id="__codelineno-3-213" name="__codelineno-3-213"></a>    <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JsonResponse</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="nv">$statusCode</span><span class="p">,</span> <span class="nv">$headers</span><span class="p">);</span>
+<a id="__codelineno-3-214" name="__codelineno-3-214"></a>    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setEncodingOptions</span><span class="p">(</span><span class="nx">JSON_UNESCAPED_UNICODE</span> <span class="o">|</span> <span class="nx">JSON_UNESCAPED_SLASHES</span> <span class="o">|</span> <span class="nx">JSON_PRESERVE_ZERO_FRACTION</span><span class="p">);</span>
+<a id="__codelineno-3-215" name="__codelineno-3-215"></a>    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">([</span><span class="s2">"response"</span> <span class="o">=&gt;</span> <span class="nv">$result</span><span class="p">]);</span>
+<a id="__codelineno-3-216" name="__codelineno-3-216"></a>    <span class="c1">// envio</span>
+<a id="__codelineno-3-217" name="__codelineno-3-217"></a>    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<a id="__codelineno-3-218" name="__codelineno-3-218"></a>    <span class="c1">// log</span>
+<a id="__codelineno-3-219" name="__codelineno-3-219"></a>    <span class="nv">$logger</span><span class="o">?-&gt;</span><span class="na">write</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getContent</span><span class="p">());</span>
+<a id="__codelineno-3-220" name="__codelineno-3-220"></a>    <span class="c1">// fechamento da conexão com o servidor Redis</span>
+<a id="__codelineno-3-221" name="__codelineno-3-221"></a>    <span class="nv">$redis</span><span class="o">?-&gt;</span><span class="na">disconnect</span><span class="p">();</span>
+<a id="__codelineno-3-222" name="__codelineno-3-222"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Comentários</p>
+<ul>
+<li>Linhas 15–16: as classes do <em>[Predis]</em> que utilizamos. A classe <em>[Predis\Client]</em> é o cliente Redis. Damos a ela o alias <em>[RedisClient]</em>, mais descritivo em nosso código. <em>[PredisException]</em> é a classe pai de todas as exceções lançadas pelo <em>[Predis]</em>;</li>
+<li>Linha 18: Damos o alias <em>[ServerDaoWithRedis]</em> à classe <em>[ServerDaoWithSession]</em> da versão 9 para refletir a mudança na implementação do script do servidor. A classe <em>[ServerDaoWithSession]</em> pode construir a camada <em>[dao]</em> a partir de dados tributários previamente obtidos: não importa se os dados vêm de uma sessão ou de um servidor Redis;</li>
+<li>linhas 38–39: a sessão é mantida. Há duas informações a ter em mente aqui:<ul>
+<li>o fato de o usuário ter se autenticado com sucesso. Essa informação tem escopo <em>[session]</em>: está ligada a um usuário específico e não se aplica a outros usuários. Ela permanece na sessão;</li>
+<li>os dados da administração tributária. Essa informação tem escopo <em>[application]</em>: não está ligada a um usuário específico, mas se aplica a todos os usuários. Ela é armazenada no servidor Redis;</li>
+</ul>
+</li>
+<li>linhas 135–145: criação do cliente <em>[Predis]</em>, que se comunicará com o servidor Redis usando os parâmetros de conexão do arquivo de configuração:<ul>
+<li>linha 140: O cliente é conectado imediatamente ao servidor para verificar se ele está respondendo;</li>
+<li>se a conexão com o servidor Redis falhar, uma resposta de erro é enviada ao cliente e um e-mail é enviado ao administrador da aplicação. A mensagem de erro é prefixada com <em>[[redis]]</em> para indicar a origem do erro;</li>
+</ul>
+</li>
+<li>linha 148: o servidor Redis é consultado sobre o valor da chave <em>[taxAdminData]</em>. O cliente <em>[Predis]</em> oferece um método para cada comando Redis: o método <em>[get]</em> envia o comando <em>[get taxAdminData]</em>. Ele retorna o valor da chave, ou <strong><em>[null]</em></strong> se ela não existir;</li>
+<li>linha 149: se a chave não for encontrada, os dados tributários são obtidos do banco de dados;</li>
+<li>linha 156: a chave <em>[taxAdminData]</em> é armazenada na memória do Redis, associada à string JSON do objeto <em>[TaxAdminData]</em> obtido da camada <em>[dao]</em>. O método <em>[set]</em> espera uma string como valor da chave. A conversão <strong><em>[(string)]</em></strong> chama o método <em>[__toString]</em> da classe <em>[TaxAdminData]</em>, que retorna a string JSON do objeto. O script do PHP 7 deixava o PHP fazer essa conversão implicitamente; com <strong><em>[declare(strict_types=1)]</em></strong>, é melhor escrevê-la explicitamente;</li>
+<li>Linha 159: Se a leitura do banco de dados falhar, retorna-se um erro 500 e envia-se um e-mail ao administrador; a mensagem é prefixada com <em>[[dao]]</em>;</li>
+<li>linhas 164–169: A chave <em>[taxAdminData]</em> está na memória do Redis. Sabemos que seu valor é a string JSON de um objeto <em>[TaxAdminData]</em>:<ul>
+<li>linha 165: a string JSON é decodificada em um array associativo; em seguida, o método estático <em>[TaxAdminData::fromArray]</em> da versão 5 constrói o objeto <em>[TaxAdminData]</em> a partir desse array, verificando seus dados;</li>
+<li>linha 167: a camada <em>[dao]</em> é instanciada com esses dados;</li>
+</ul>
+</li>
+<li>linhas 182–187: A função <em>[doInternalServerError]</em> tem um parâmetro adicional—o cliente Redis—, que ela repassa à função <em>[sendResponse]</em>. Quando uma função tem muitos parâmetros, eles são escritos um por linha;</li>
+<li>linha 221: A função <em>[sendResponse]</em> fecha a conexão com o servidor Redis, se ela foi aberta.</li>
+</ul>
+<h2 id="206-codigo-do-cliente">20.6. <span style="color: #2e74b5">Código do cliente</span></h2>
+<p>A versão 10 do cliente é idêntica à versão 9. A única mudança é no arquivo de configuração <em>[config-client.json]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nt">"urlServer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost/php8-oct-2026/scripts-web/tax/version-10/tax-server.php"</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">        </span><span class="nt">"passwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="nt">"httpClientOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="nt">"verify_peer"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="nt">"verify_host"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="nt">"taxPayersDataFilename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data/taxpayersdata.json"</span><span class="p">,</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span><span class="nt">"resultsFilename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data/results.json"</span><span class="p">,</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="nt">"errorsFilename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data/errors.json"</span><span class="p">,</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="s2">"../version-05/Entities/TaxException.php"</span><span class="p">,</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="s2">"../version-05/Entities/TaxPayerData.php"</span><span class="p">,</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">        </span><span class="s2">"../version-05/Utilities/Utilities.php"</span><span class="p">,</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">        </span><span class="s2">"../version-05/Dao/TraitDao.php"</span><span class="p">,</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">        </span><span class="s2">"../version-08/Dao/InterfaceClientDao.php"</span><span class="p">,</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span><span class="s2">"../version-09/Dao/ClientDao.php"</span><span class="p">,</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">        </span><span class="s2">"../version-08/Business/InterfaceClientBusiness.php"</span><span class="p">,</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">        </span><span class="s2">"../version-08/Business/ClientBusiness.php"</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Linha 2: a URL do servidor da versão 10;</li>
+<li>linha 20: a camada <em>[dao]</em> do cliente é a da versão 9.</li>
+</ul>
+<p>A pasta <em>[scripts-console/tax/version-10]</em> contém, portanto, apenas a pasta <em>[Data]</em>, o script principal <em>[Main/MainTaxClient.php]</em> (o da versão 8) e o script de teste <em>[Tests/ClientBusinessTest.php]</em>.</p>
+<p>Antes de executar o cliente, vamos excluir a chave <em>[taxAdminData]</em> da memória do servidor Redis com o comando <em>[del taxAdminData]</em> do <em>[redis-cli]</em>. Em seguida, vamos executar o cliente:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>&gt; php MainTaxClient.php
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>The results have been saved in the file [Data/results.json]
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>Done
+</code></pre></div></td></tr></table></div>
+<p>Os resultados são os mesmos da versão 9. Os logs do servidor são os seguintes:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>01/10/26 18:10:12.890 : ---new request
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>01/10/26 18:10:12.891 : Authentication in progress…
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>01/10/26 18:10:12.891 : Authentication successful [admin]
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>01/10/26 18:10:12.891 : valid parameters ['married'=&gt;yes, 'children'=&gt;2, 'salary'=&gt;55555]
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>01/10/26 18:10:12.907 : tax data taken from the database
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>01/10/26 18:10:12.909 : {"response":{"tax":2814,"surcharge":0,"discount":0,"reduction":0,"rate":0.14}}
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>01/10/26 18:10:12.912 : ---new request
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>01/10/26 18:10:12.912 : Authentication taken from the session…
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>01/10/26 18:10:12.912 : valid parameters ['married'=&gt;yes, 'children'=&gt;2, 'salary'=&gt;50000]
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>01/10/26 18:10:12.913 : tax data taken from Redis
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>01/10/26 18:10:12.913 : {"response":{"tax":1384,"surcharge":0,"discount":384,"reduction":347,"rate":0.14}}
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>01/10/26 18:10:12.916 : ---new request
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>…
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Linha 5: Durante a primeira requisição, os dados tributários são obtidos do banco de dados;</li>
+<li>linha 10: durante a requisição seguinte, os dados são obtidos do Redis.</li>
+</ul>
+<p>Agora vamos testar um novo cenário de erro: o servidor Redis está indisponível. Podemos parar o servidor Redis pelo <em>[Laragon]</em>. Em vez disso, definimos a porta 6380—na qual nenhum servidor escuta—na configuração do servidor (<em>[redis])</em>. O resultado no console é o seguinte:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>&gt; php MainTaxClient.php
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>Error no. 42: {"HTTP status":500,"error":"[redis], Connection refused [tcp://127.0.0.1:6380]"}
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>Done
+</code></pre></div></td></tr></table></div>
+<p>Os logs do servidor mostram que o administrador foi notificado por e-mail:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>01/10/26 18:10:32.255 : ---new request
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>01/10/26 18:10:32.255 : Authentication in progress…
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>01/10/26 18:10:32.256 : Authentication successful [admin]
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>01/10/26 18:10:32.256 : valid parameters ['married'=&gt;yes, 'children'=&gt;2, 'salary'=&gt;55555]
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>01/10/26 18:10:32.305 : Message [[redis], Connection refused [tcp://127.0.0.1:6380]] sent to guest@localhost
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>01/10/26 18:10:32.305 : {"response":{"error":"[redis], Connection refused [tcp://127.0.0.1:6380]"}}
+</code></pre></div></td></tr></table></div>
+<p>Em seguida, restauramos a porta 6379 na configuração.</p>
+<h2 id="207-testes-do-cliente-com-phpunit">20.7. <span style="color: #4f81bd"><span style="color: #2e74b5">Testes do cliente com </span><em>[PHPUnit]</em></span></h2>
+<p>A classe de teste <em>[ClientBusinessTest]</em> da versão 10 é idêntica à da versão 9; o ambiente de teste é o do cliente da versão 10. Antes de iniciar os testes, use o cliente <em>[redis-cli]</em> para excluir a chave <em>[taxAdminData]</em> da memória do servidor Redis (comando <em>[del taxAdminData]</em>). Agora, execute o teste:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span>
+<span class="normal"><a href="#__codelineno-9-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>&gt; php vendor/bin/phpunit scripts-console/tax/version-10/Tests --testdox
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>PHPUnit 12.5.37 by Sebastian Bergmann and contributors.
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>Runtime:       PHP 8.5.11
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>Configuration: .../php8-oct-2026/phpunit.xml
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>...........                                                       11 / 11 (100%)
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>Time: 00:00.063, Memory: 16.00 MB
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>Client Business (Application\Tests\ClientBusiness)
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a> ✔ Calculate tax with data set "couple, 2 children, 55555"
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a> ✔ Calculate tax with data set "couple, 2 children, 50000"
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a> ✔ Calculate tax with data set "couple, 3 children, 50000"
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a> ✔ Calculate tax with data set "single, 2 children, 100000"
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a> ✔ Calculate tax with data set "single, 3 children, 100000"
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a> ✔ Calculate tax with data set "couple, 3 children, 100000"
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a> ✔ Calculate tax with data set "couple, 5 children, 100000"
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a> ✔ Calculate tax with data set "single, 0 children, 100000"
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a> ✔ Calculate tax with data set "couple, 2 children, 30000"
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a> ✔ Calculate tax with data set "single, 0 children, 200000"
+<a id="__codelineno-9-22" name="__codelineno-9-22"></a> ✔ Calculate tax with data set "couple, 3 children, 200000"
+<a id="__codelineno-9-23" name="__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24"></a>OK (11 tests, 22 assertions)
+</code></pre></div></td></tr></table></div>
+<p>Vamos examinar os logs <em>[logs.txt]</em> do servidor:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>01/10/26 18:10:32.488 : ---new request
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>01/10/26 18:10:32.488 : Authentication in progress…
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>01/10/26 18:10:32.488 : Authentication successful [admin]
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>01/10/26 18:10:32.488 : valid parameters ['married'=&gt;yes, 'children'=&gt;2, 'salary'=&gt;55555]
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>01/10/26 18:10:32.489 : tax data taken from the database
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>01/10/26 18:10:32.491 : {"response":{"tax":2814,"surcharge":0,"discount":0,"reduction":0,"rate":0.14}}
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>01/10/26 18:10:32.495 : ---new request
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>01/10/26 18:10:32.495 : Authentication in progress…
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>01/10/26 18:10:32.495 : Authentication successful [admin]
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>01/10/26 18:10:32.495 : valid parameters ['married'=&gt;yes, 'children'=&gt;2, 'salary'=&gt;50000]
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a>01/10/26 18:10:32.496 : tax data taken from Redis
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a>01/10/26 18:10:32.496 : {"response":{"tax":1384,"surcharge":0,"discount":384,"reduction":347,"rate":0.14}}
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a>01/10/26 18:10:32.500 : ---new request
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a>01/10/26 18:10:32.500 : Authentication in progress…
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a>01/10/26 18:10:32.500 : Authentication successful [admin]
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a>01/10/26 18:10:32.500 : valid parameters ['married'=&gt;yes, 'children'=&gt;3, 'salary'=&gt;50000]
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a>01/10/26 18:10:32.501 : tax data taken from Redis
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a>01/10/26 18:10:32.501 : {"response":{"tax":0,"surcharge":0,"discount":720,"reduction":0,"rate":0.14}}
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a>…
+</code></pre></div></td></tr></table></div>
+<p>Já mencionamos que, antes de cada teste, o método <em>[setUp]</em> da classe de teste é reexecutado, o que significa que a classe <em>[ClientDao]</em> em teste é instanciada, a cada teste, com um cookie de sessão inexistente. É, portanto, como se os 11 testes representassem 11 usuários diferentes, com 11 sessões diferentes:</p>
+<ul>
+<li>linhas 2–3, 8–9, 14–15: Cada teste se autentica porque inicia uma nova sessão;</li>
+<li>linha 5: os dados tributários são obtidos do banco de dados;</li>
+<li>linhas 11, 17: os dados tributários são obtidos da memória do Redis. Isso demonstra claramente que existe uma memória de escopo <em>[application]</em> compartilhada por todos os usuários da aplicação.</li>
+</ul>
+<h2 id="208-visualizacao-do-conteudo-do-servidor-redis">20.8. <span style="color: #2e74b5">Visualização do conteúdo do servidor Redis</span></h2>
+<p>Vimos que o servidor Redis pode ser gerenciado em modo de comando. O comando <em>[get taxAdminData]</em> exibe o valor da chave <em>[taxAdminData]</em>: reconhecemos a string JSON como pertencente a um objeto do tipo <em>[TaxAdminData]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>&gt; redis-cli get taxAdminData
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>"{\"limits\":[9964,27519,73779,156244,0],\"coeffR\":[0,0.14,0.3,0.41,0.45],\"coeffN\":[0,1394.96,5798,13913.69,20163.45],\"halfShareQfCeiling\":1551,\"singleIncomeCeilingForReduction\":21037,\"coupleIncomeCeilingForReduction\":42074,\"halfShareReductionValue\":3797,\"singleDiscountCeiling\":1196,\"coupleDiscountCeiling\":1970,\"coupleTaxCeilingForDiscount\":2627,\"singleTaxCeilingForDiscount\":1595,\"tenPercentAllowanceMax\":12502,\"tenPercentAllowanceMin\":437}"
+</code></pre></div></td></tr></table></div>
+<p>O <em>[redis-cli]</em> exibe a string entre aspas, precedendo cada aspa que ela contém com o caractere <em>[\]</em>.</p>
+<p>O servidor Redis também pode ser gerenciado por meio de uma interface gráfica. A ferramenta oficial é o <em>[Redis Insight]</em> (<a href="https://redis.io/insight"><u><span style="color: #0563c1">https://redis.io/insight</span></u></a>), que é gratuito e está disponível para Windows. Depois de conectado ao servidor <em>[127.0.0.1:6379]</em>, ele exibe a lista de chaves armazenadas no servidor. Ao clicar na chave <em>[taxAdminData]</em>, você vê seu valor, que a ferramenta exibe como um objeto JSON. Também é possível excluir uma chave, adicionar uma nova ou executar comandos do <em>[redis-cli]</em> em um console integrado.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Este curso, escrito pela IA <strong>Claude</strong>, da Anthropic, a pedido de <strong>Serge Tahé</strong>, é disponibilizado ao público sob os termos da licença
+        <em>Creative Commons Atribuição – Uso Não Comercial –
+        Compartilha Igual 3.0 Não Adaptada</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
